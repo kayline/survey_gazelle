@@ -40,13 +40,9 @@ end
 
 post '/user/:user_id/survey/create' do
   bounce(session[:id])
-  title = params[:survey][:title]
-  survey = Survey.create(:title => title, :creator_id => session[:id])
-  question = params[:survey][:question]
-  Question.create(:question => question, :survey_id => survey.id)
-  params[:survey][:choices].each do |hash|
-    Choice.create(:choice => hash[:choice], :question_id => question.id)
-  end
+  create_survey(params[:survey][:title])
+  create_question(params[:survey][:question])
+  create_choices(params[:survey][:choices])
   redirect '/'
 end
 
