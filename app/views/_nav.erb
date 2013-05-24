@@ -1,11 +1,14 @@
 <div class="navbar">
   <ul>
     <li><a href="/">Home</a></li>
+    <% if current_user %>
     <li><a href="/user/<%= session[:id] %>/profile">Profile</a></li>
     <li><a href="/surveys">Surveys</a></li>
     <li><a href="/user/<%= session[:id] %>/survey/create">Create Survey</a></li>
+    <li><a href="/logout">Logout</a></li>
+    <% else %>
     <li><a href="/login">Login</a></li>
     <li><a href="/user/create">Create Account</a></li>
-    <li><a href="/logout">Logout</a></li>
+    <% end %>
   </ul>  
 </div>

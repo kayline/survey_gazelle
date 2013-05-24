@@ -1,0 +1,14 @@
+
+<div class="container">
+<h2><%= @survey.title %></h2>
+
+<table>
+<%=question(@survey.id)%>
+<th>Option</th><th>Count</th>
+<% @results = choice_count(@survey.id) %>
+<% @results.keys.length.times do |i| %>
+<tr><td><%= key = @results.keys[i]%></td><td><%= @results[key] %></td></tr>
+<% end %>
+
+</table>
+</div>

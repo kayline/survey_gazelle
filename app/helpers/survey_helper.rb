@@ -17,7 +17,7 @@ helpers do
     results= {}
     @question = Survey.find(survey_id).questions[0]
     @question.choices.each do |choice|
-      results["#{choice.id}"] = choice.answers.count
+      results["#{choice.choice}"] = choice.answers.count
     end
     results
    end

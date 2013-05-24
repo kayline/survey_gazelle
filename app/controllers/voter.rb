@@ -22,6 +22,7 @@ get '/survey/:survey_id/results' do
  @survey = Survey.find(params[:survey_id])
  @results = choice_count(@survey.id)
  p @results.inspect
+ erb :results
 
 end
 
