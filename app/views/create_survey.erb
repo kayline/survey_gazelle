@@ -1,9 +1,11 @@
 <div class="container">
-  <form method="post" action="/user/<%= session[:id] %>/survey/create">
+  <form class="survey" method="post" action="/user/<%= session[:id] %>/survey/create">
     <input name="survey[title]" type="text" placeholder="Survey Name">
     <input name="survey[question]" type="text" placeholder="Question">
     <input name="survey[choices][][choice]" type="text" placeholder="Answer">
     <input name="survey[choices][][choice]" type="text" placeholder="Answer">
-    <input type="submit" value="Submit">
+    <input class="submit" type="submit" value="Submit">
   </form>
+  <button class="add_choice" type="button">Add Choice</button>
+  <button class="add_question" type="button">Add Question</button>
 </div>
