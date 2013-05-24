@@ -4,9 +4,10 @@
 
 <p><%= question(@survey.id) %>?</p>
 
-<form class="survey_question" action="/surveys/<%= @survey.id %>" method="post">
+<form class="survey_question" action="/survey/<%= @survey.id %>" method="post">
   <% choices(@survey.id).each do |choice| %>
   <label for="<%=choice.choice%>"><%= choice.choice %></label>
+  <input type="hidden" name="choice_id" value="<%=choice.id %>">
   <input type="radio" name="response" value="<%= choice.choice %>">
   <% end %>
   <input type="submit" value="Vote">
