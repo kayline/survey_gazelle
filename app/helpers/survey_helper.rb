@@ -13,4 +13,13 @@ helpers do
     choices
    end
 
+   def choice_count(survey_id)
+    results= {}
+    @question = Survey.find(survey_id).questions[0]
+    @question.choices.each do |choice|
+      results["#{choice.id}"] = choice.answers.count
+    end
+    results
+   end
+
 end
