@@ -7,7 +7,7 @@ get '/login' do
 end
 
 post '/login' do
-  @user = User.find_by_username(params[:username])
+  p @user = User.find_by_username(params[:username])
   session[:id] = @user.id
   erb :profile
 end
