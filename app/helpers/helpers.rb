@@ -19,7 +19,7 @@ helpers do
 
   def create_choices(choices)
     choices.each do |choice|
-      Choice.create(:choice => choice("choice"), :question_id => @question.id)
+      Choice.create(:choice => choice["choice"], :question_id => @question.id)
     end
   end
 end
