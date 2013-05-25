@@ -35,7 +35,7 @@ th {
 }
 
 .navbar ul li a:hover {
-  color: blue;
+  color: lightGray;
 }
 
 .logout {
@@ -101,5 +101,14 @@ th {
 
 .deets {
   font-size: 24pt;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
 }
 

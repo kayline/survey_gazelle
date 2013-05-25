@@ -17,9 +17,20 @@ helpers do
     results= {}
     @question = Survey.find(survey_id).questions[0]
     @question.choices.each do |choice|
-      results["#{choice.choice}"] = choice.answers.count
+      choice_sym = choice.choice.to_sym
+      results[choice_sym] = choice.answers.count
     end
     results
+   end
+
+   def results_to_json(survey_id)
+    results= {}
+    @question = Survey.find(survey_id).questions[0]
+    @question.choices.each do |choice|
+      choice_string = choice.choice
+      results[choice_string] = choice.answers.count.to_s
+    end
+    results.to_json.tr(' ','')
    end
 
 end

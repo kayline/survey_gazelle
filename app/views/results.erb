@@ -1,4 +1,8 @@
+<div>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="/js/results.js"></script>
 
+</div>
 <div class="container">
   <div class="survey_name">
     <h2><%= @survey.title %></h2>
@@ -13,5 +17,6 @@
         <tr><td><%= key = @results.keys[i]%></td><td><%= @results[key] %></td></tr>
       <% end %>
     </table>
+    <input id="results_json" type="hidden" value="<%= @results_json %>">
   </div>
 </div>
