@@ -9,7 +9,8 @@ get '/survey/:survey_id' do
 end
 
 post '/survey/:survey_id' do
- @choice = Choice.find(params[:choice_id])
+  p params
+ @choice = Choice.find_by_choice(params[:response])
  @survey = Survey.find(params[:survey_id])
  @voter_id = current_user.id
 

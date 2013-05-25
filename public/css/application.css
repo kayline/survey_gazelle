@@ -43,6 +43,16 @@ th {
   padding-right: 40px;
 }
 
+.created_surveys ul {
+  list-style-type: none;
+
+}
+
+.created_surveys ul li {
+  float: left;
+  padding-right: 10px;
+}
+
 .survey {
   margin-top: 150px;
   background: #8D8B5F;
@@ -87,5 +97,9 @@ th {
   background: #8D8B5F;
   border-radius: 4px;
   padding: 10px;
+}
+
+.deets {
+  font-size: 24pt;
 }
 
