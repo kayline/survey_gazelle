@@ -1,16 +1,18 @@
 <div class="container">
-<h2><%= @survey.title %></h2>
-<h4>created by <%= @survey.creator.username %></h4>
+  <div class="survey_name">
+    <h2><%= @survey.title %></h2>
+    <h4>created by <%= @survey.creator.username %></h4>
+  </div>
+  <div class="survey_content">
+    <p><%= question(@survey.id) %>?</p>
 
-<p><%= question(@survey.id) %>?</p>
-
-<form class="survey_question" action="/survey/<%= @survey.id %>" method="post">
-  <% choices(@survey.id).each do |choice| %>
-  <label for="<%=choice.choice%>"><%= choice.choice %></label>
-  <input type="hidden" name="choice_id" value="<%=choice.id %>">
-  <input type="radio" name="response" value="<%= choice.choice %>">
-  <% end %>
-  <input type="submit" value="Vote">
-</form>
-
+    <form class="survey_question" action="/survey/<%= @survey.id %>" method="post">
+      <% choices(@survey.id).each do |choice| %>
+        <label for="<%=choice.choice%>"><%= choice.choice %></label>
+        <input type="hidden" name="choice_id" value="<%=choice.id %>">
+        <input type="radio" name="response" value="<%= choice.choice %>">
+      <% end %>
+      <input type="submit" value="Vote">
+    </form>
+  </div>
 </div>

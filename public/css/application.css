@@ -1,8 +1,13 @@
+body {
+  /*background-image:url('fur3.jpeg');*/
+  /*background-repeat: no-repeat;*/
+  background-color: #DBDBDC;
+}
+
 .container {
   margin: 50px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
 }
 th {
   text-align: left;
@@ -13,17 +18,74 @@ th {
   top: 0;
   left: 0;
   right: 0;
+  background-color:#504060 ;
+
 }
 
 .navbar ul li {
   display: inline;
+  padding-right: 20px;
 }
 
 .navbar ul li a {
   text-decoration: none;
   color: black;
+
+  color: white;
 }
 
 .navbar ul li a:hover {
   color: blue;
 }
+
+.logout {
+  float:right;
+  padding-right: 40px;
+}
+
+.survey {
+  margin-top: 150px;
+  background: #8D8B5F;
+  border-radius: 4px;
+  padding: 20px;
+}
+.survey_name {
+  margin-top: 100px;
+  background: #8D8B5F;
+  border-radius: 4px;
+}
+
+.survey_name h2 {
+  margin-bottom: 5px;
+}
+
+.survey_name h4 {
+  margin-top:5px;
+}
+
+.survey_content {
+  margin-top: 50px;
+  background: #8D8B5F;
+  border-radius: 4px;
+  padding: 2px 20px 20px 20px;
+}
+
+.survey_question input {
+  /*padding-right: 20px;*/
+}
+
+.add_inputs {
+  margin-top: 20px;
+  background: #8D8B5F;
+  border-radius: 4px;
+  padding: 10px;
+
+}
+
+.results_table {
+  margin-top: 20px;
+  background: #8D8B5F;
+  border-radius: 4px;
+  padding: 10px;
+}
+

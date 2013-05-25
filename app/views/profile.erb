@@ -1,4 +1,18 @@
 <div class="container">
-  <%= current_user.username %>
-  <%= current_user.email %>
+  <div class="deets">
+    <%= current_user.username %>
+    <%= current_user.email %>
+  </div>
+
+  <div class="created_surveys">
+    <ul>
+      <% current_user.surveys.each do |survey| %>
+      <li><%=survey.title%></li>
+        <ul class="survey_links">
+          <li><a href="/survey/<%=survey.id%>">View Survey</a></li>
+          <li><a href="/survey/<%=survey.id%>/results">View Results</a></li>
+        </ul>
+      <% end %>
+    </ul>
+  </div>
 </div>
