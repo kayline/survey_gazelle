@@ -46,6 +46,8 @@ helpers do
 
    def get_voted_surveys(user_id)
     @user = User.find(user_id)
+    survey_objs = @user.questions.map {|question| question.survey }.uniq
+
    end
 
 end

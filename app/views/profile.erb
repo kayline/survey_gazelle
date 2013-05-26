@@ -4,9 +4,10 @@
     <%= current_user.email %>
   </div>
 
-  <div class="created_surveys">
+  <div id="created" class="profile_surveys">
+    <h3>Surveys I Created</h3>
     <ul>
-      <% current_user.surveys.each do |survey| %>
+      <% @created_surveys.each do |survey| %>
       <li><div class="survey_title"><%=survey.title%></div>
         <ul class="survey_links">
           <li><a href="/survey/<%=survey.id%>">View Survey</a></li>
@@ -17,9 +18,10 @@
     </ul>
   </div>
 
-  <div class="voted_surveys">
+  <div id="voted" class="profile_surveys">
+    <h3>Surveys I Voted On</h3>
     <ul>
-      <% current_user.surveys.each do |survey| %>
+      <% @voted_surveys.each do |survey| %>
       <li><div class="survey_title"><%=survey.title%></div>
         <ul class="survey_links">
           <li><a href="/survey/<%=survey.id%>">View Survey</a></li>

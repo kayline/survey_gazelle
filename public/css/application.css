@@ -61,14 +61,25 @@ th {
   padding-right: 40px;
 }
 
-.created_surveys ul {
-  list-style-type: none;
+.profile_surveys {
+  float:left;
+  background: #8D8B5F;
+  border-radius: 4px;
+  padding: 0 10px 10px 10px;
+  margin-right: 15px;
+  margin-top: 20px;
 
 }
 
-.created_surveys ul li {
+.profile_surveys ul {
+  list-style-type: none;
+  padding-left: 0px;
+
+}
+
+.profile_surveys ul li {
   clear:both;
-  margin: 1em;
+  margin: 1em 0 1em 0;
 }
 
 .survey_links {
@@ -83,6 +94,7 @@ th {
 }
 
 .survey_links li a {
+  color: lightGray;
   
 }
 
