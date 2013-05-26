@@ -7,12 +7,27 @@
   <div class="created_surveys">
     <ul>
       <% current_user.surveys.each do |survey| %>
-      <li><%=survey.title%></li>
+      <li><div class="survey_title"><%=survey.title%></div>
         <ul class="survey_links">
           <li><a href="/survey/<%=survey.id%>">View Survey</a></li>
           <li><a href="/survey/<%=survey.id%>/results">View Results</a></li>
         </ul>
+        </li>
       <% end %>
     </ul>
   </div>
+
+  <div class="voted_surveys">
+    <ul>
+      <% current_user.surveys.each do |survey| %>
+      <li><div class="survey_title"><%=survey.title%></div>
+        <ul class="survey_links">
+          <li><a href="/survey/<%=survey.id%>">View Survey</a></li>
+          <li><a href="/survey/<%=survey.id%>/results">View Results</a></li>
+        </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>

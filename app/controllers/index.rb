@@ -30,6 +30,8 @@ end
 
 get "/user/:user_id/profile" do
   bounce(session[:id])
+  @created_surveys = current_user.surveys
+  @voted_surveys = get_voted_surveys(session[:id])
   erb :profile
 end
 

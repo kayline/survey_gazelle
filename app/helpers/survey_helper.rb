@@ -44,14 +44,8 @@ helpers do
     results
   end
 
-   def results_to_json(survey_id)
-    results= {}
-    @question = Survey.find(survey_id).questions[0]
-    @question.choices.each do |choice|
-      choice_string = choice.choice
-      results[choice_string] = choice.answers.count.to_s
-    end
-    results.to_json.tr(' ','')
+   def get_voted_surveys(user_id)
+    @user = User.find(user_id)
    end
 
 end

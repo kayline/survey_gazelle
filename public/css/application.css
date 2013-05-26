@@ -63,13 +63,27 @@ th {
 
 .created_surveys ul {
   list-style-type: none;
-  clear:both;
 
 }
 
 .created_surveys ul li {
-  float: left;
+  clear:both;
+  margin: 1em;
+}
+
+.survey_links {
+  padding-left: 0px;
+  width: 500px;
+  display: inline;
+}
+
+.survey_links li {
+  display: inline;
   padding-right: 10px;
+}
+
+.survey_links li a {
+  
 }
 
 .survey {
