@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var test_data = [2,3,1,7,2];
+  var test_data = [2,3,1,4,2];
   var results_hash = $("#results_json").val();
   console.log(results_hash);
   var results_str = results_hash.toString();
