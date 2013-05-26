@@ -1,4 +1,14 @@
-body {
+html {
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+}
+  body {
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
   /*background-image:url('fur3.jpeg');*/
   /*background-repeat: no-repeat;*/
   background-color: #DBDBDC;
@@ -121,3 +131,66 @@ th {
   color: white;
 }
 
+/* ################### Slideshow ###################### */
+
+.slideshow {
+}
+
+.grass{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    background: url("/img/grass.png");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: 250px 150px;
+    height: 100%;
+    width: 300%;
+    opacity: 0.40;
+    -webkit-animation: slideshow 5s linear infinite;
+    -moz-animation:    slideshow 5s linear infinite;
+}
+
+@-webkit-keyframes slideshow {
+    0%   { left: 0; }
+    100% { left: -200%;}
+}
+
+@-moz-keyframes slideshow {
+    0%   { left: 0; }
+    100% { left: -200%; }
+}
+
+.images {
+   -webkit-transform: translate3d(0, 0, 0);
+}
+
+@-webkit-keyframes moveSlideshow {
+    0%   { 
+        -webkit-transform: translateX(0);  
+    }    
+    100% { 
+        -webkit-transform: translateX(-200%);  
+    }
+} 
+@-moz-keyframes moveSlideshow {
+    0%   { 
+        -moz-transform:    translateX(0); 
+    }    
+    100% { 
+        -moz-transform:    translateX(-200%); 
+    }
+}
+
+.overflow {
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.inneroverflow {
+  z-index: 0;
+}
