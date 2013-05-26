@@ -28,11 +28,15 @@ end
 
 get '/survey/:survey_id/results' do 
  @survey = Survey.find(params[:survey_id])
- @results = choice_count(@survey.id)
- p @results.inspect
- @results_json = results_to_json(@survey.id)
- puts "JSON STRING HERE"
- p @results_json
+ @results_hash = choice_count_mult(@survey.id)
+ p @results_hash
+ p @results_json = @results_hash.to_json
+ 
+ # raise @results.inspect
+ # p @results.inspect
+ # @results_json = results_to_json(@survey.id)
+ # puts "JSON STRING HERE"
+ # p @results_json
  erb :results
 
 end

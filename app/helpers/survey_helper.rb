@@ -29,6 +29,21 @@ helpers do
   results
  end
 
+  def choice_count_mult(survey_id)
+    results= {}
+    @questions = Survey.find(survey_id).questions
+    @questions.each do |question|
+      question_sym = question.question.to_sym
+      choice_array = []
+      question.choices.each do |choice|
+        choice_sym = choice.choice.to_sym
+        choice_array << {choice_sym => choice.answers.count}
+      end
+      results[question_sym] = choice_array
+    end
+    results
+  end
+
    def results_to_json(survey_id)
     results= {}
     @question = Survey.find(survey_id).questions[0]
