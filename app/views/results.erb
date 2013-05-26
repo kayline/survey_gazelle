@@ -9,12 +9,14 @@
     <h4>created by <%= @survey.creator.username %></h4>
   </div>
   <div class="results_table">
+    <% get_questions(@survey.id).each do |q| %>
     <table>
-      <%=question(@survey.id)%>
+      <%=q.question%>
       <th>Option</th><th>Count</th>
       <% @results = choice_count(@survey.id) %>
       <% @results.keys.length.times do |i| %>
         <tr><td><%= key = @results.keys[i]%></td><td><%= @results[key] %></td></tr>
+      <% end %>
       <% end %>
     </table>
     <input id="results_json" type="hidden" value="<%= @results_json %>">

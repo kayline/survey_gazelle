@@ -1,7 +1,10 @@
 helpers do
   def current_user
     if session[:id]
+      p session[:id]
       @current_user = User.find(session[:id])
+    else
+      false
     end
   end
 

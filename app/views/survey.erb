@@ -4,14 +4,17 @@
     <h4>created by <%= @survey.creator.username %></h4>
   </div>
   <div class="survey_content">
-    <p><%= question(@survey.id) %>?</p>
+    <% get_questions(@survey.id).each do |q| %>
+    <p><%= q.question %>?</p>
 
     <form class="survey_question" action="/survey/<%= @survey.id %>" method="post">
-      <% choices(@survey.id).each do |choice| %>
+      <% get_choices(q.id).each do |choice| %>
         <label for="<%=choice.choice%>"><%= choice.choice %></label>
-        <input type="radio" name="response" value="<%= choice.choice %>">
+        <input type="radio" name="<%= q.id %>" value="<%= choice.choice %>">
       <% end %>
+       <% end %>
       <input type="submit" value="Vote">
     </form>
+
   </div>
 </div>
