@@ -1,10 +1,10 @@
 var form = "<div class='question-box container'>"+
-              "<input name='survey[question]' type='text' placeholder='Question'>"+
-              "<input name='survey[choices][][choice]' type='text' placeholder='Answer'>"+
-              "<input name='survey[choices][][choice]' type='text' placeholder='Answer'>"+
+              "<input name='survey[questions][][question]' type='text' placeholder='Question'>"+
+              "<input name='survey[questions][][choices][][choice]' type='text' placeholder='Answer'>"+
+              "<input name='survey[questions][][choices][][choice]' type='text' placeholder='Answer'>"+
               "<button class='add_choice' type='button'>Add Choice</button>"+
             "</div>";
-var choice = "<input name='survey[choices][][choice]' type='text' placeholder='Answer'>";
+var choice = "<input name='survey[questions][][choices][][choice]' type='text' placeholder='Answer'>";
 
 $(document).ready(function() {
   $('.add_question').on('click', function(){
