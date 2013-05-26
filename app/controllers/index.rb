@@ -39,17 +39,15 @@ get "/user/:user_id/survey/create" do
 end
 
 post '/user/:user_id/survey/create' do
-  p params[:survey][:title]
-  p params[:survey][:questions]
-  p params[:survey][:questions][:question1]
-  
+    p params[:survey][:title]
+    p params[:survey][:questions]
+    create_survey(params[:survey][:title])
+    params[:survey][:questions].each do |q_hash|
+      create_question(q_hash[:question])
+      create_choices(q_hash[:choices])
+    end
 
-  # raise params.inspect
-  # bounce(session[:id])
-  # p create_survey(params[:survey][:title])
-  # create_question(params[:survey][:question])
-  # create_choices(params[:survey][:choices])
-  # redirect '/'
+  redirect '/'
 end
 
 
