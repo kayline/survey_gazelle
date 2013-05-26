@@ -11,7 +11,7 @@
   <div class="results_table">
     <% get_questions(@survey.id).each do |q| %>
     <table>
-      <%=q.question%>
+      <h3><%=q.question%></h3>
       <th>Option</th><th>Count</th>
       <% @results = choice_count(@survey.id) %>
       <% @results.keys.length.times do |i| %>
@@ -21,5 +21,4 @@
     </table>
     <input id="results_json" type="hidden" value='<%= @results_json %>' >
   </div>
-  <p><%=@results_json%></p>
 </div>
