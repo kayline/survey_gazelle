@@ -9,7 +9,7 @@ html {
   height: 100%;
   min-width: 100%;
   width: 100%;
-  background-color: #DBDBDC;
+  background-color: white;
 }
 
 .container {
@@ -34,7 +34,7 @@ th {
   top: 0;
   left: 0;
   right: 0;
-  background-color:#504060 ;
+  background-color:#2F1900 ;
   z-index: 100;
 
 }
@@ -52,7 +52,7 @@ th {
 }
 
 .navbar ul li a:hover {
-  color: lightGray;
+  color: rgb(245,204,23);
 }
 
 .logout {
@@ -175,7 +175,12 @@ th {
     background-size: 250px 150px;
     height: 100%;
     width: 300%;
-    opacity: .5;
+    opacity:1;
+    filter: grayscale(60%);
+    -webkit-filter: grayscale(60%);
+    -moz-filter: grayscale(60%);
+    -ms-filter: grayscale(60%);
+    -o-filter: grayscale(60%);
     -webkit-animation: slideshow 5s linear infinite;
     -moz-animation:    slideshow 5s linear infinite;
 }
@@ -221,6 +226,12 @@ th {
   overflow: hidden;
   position: relative;
   z-index: 0;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgba(245,204,23,.5)), to(rgba(243,71,57, .8)));
+  background: -webkit-radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
+  background:    -moz-radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
+  background:     -ms-radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
+  background:      -o-radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
+  background:         radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
 }
 
 .inneroverflow {
@@ -233,7 +244,7 @@ th {
   margin: 0 auto;
   display: block;
   top: 50%;
-  margin-top: -226px;
+  margin-top: -266px;
   left: 50%;
   margin-left: -300px;
   position: absolute;
@@ -243,11 +254,15 @@ th {
   font-weight: bold;
   position: absolute;
   font-size: 80px;
-  color: #504060;
+  color: #2F1900;
   text-shadow: -2px 0 white, 0 2px white,
       2px 0 white, 0 -2px white;
   top: 50%;
   left: 50%;
   margin-left: -280px;
-  margin-top: 226px;
+  margin-top: 186px;
+  z-index: -2;
+}
+
+#title:hover {
 }
