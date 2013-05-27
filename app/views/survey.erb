@@ -1,11 +1,11 @@
 <div class="container">
   <div class="survey_name">
-    <h2><%= @survey.title %></h2>
+    <h1><%= @survey.title %></h1>
     <h4>created by <%= @survey.creator.username %></h4>
   </div>
   <div class="survey_content">
     <% get_questions(@survey.id).each do |q| %>
-    <p><%= q.question %>?</p>
+    <h3><%= q.question %>?</h3>
 
     <form class="survey_question" action="/survey/<%= @survey.id %>" method="post">
       <% get_choices(q.id).each do |choice| %>
@@ -13,6 +13,7 @@
         <input type="radio" name="<%= q.id %>" value="<%= choice.choice %>">
       <% end %>
        <% end %>
+       <br><br>
       <input type="submit" value="Vote">
     </form>
 

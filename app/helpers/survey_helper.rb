@@ -19,9 +19,9 @@ helpers do
 
 
 
- def choice_count(survey_id)
-  results= {}
-  question = Survey.find(survey_id).questions[0]
+ def choice_count(survey_id, index)
+  results = {}
+  question = Survey.find(survey_id).questions[index]
   question.choices.each do |choice|
     choice_sym = choice.choice.to_sym
     results[choice_sym] = choice.answers.count

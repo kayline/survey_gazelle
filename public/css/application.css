@@ -3,19 +3,20 @@ html {
   height: 100%;
   min-width: 100%;
   width: 100%;
-}
-  body {
-  min-height: 100%;
-  height: 100%;
-  min-width: 100%;
-  width: 100%;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgba(245,204,23,.5)), to(rgba(243,71,57, .8)));
   background: -webkit-radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
   background:    -moz-radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
   background:     -ms-radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
   background:      -o-radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
   background:         radial-gradient(rgba(245,204,23,.5), rgba(243,71,57, .8));
+
 }
+  body {
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+  }
 
 a {
   text-decoration: none;
@@ -119,37 +120,39 @@ th {
 }
 
 .survey {
+  position: absolute;
   width: 80%;
+  top: 20%;
+  left: 7%;
   margin: auto;
   color: white;
-  margin-top: 150px;
   background: #2F1900;
   border-radius: 4px;
   padding: 20px;
 }
 .survey_name {
+  width: 100%;
   color: white;
-  margin-top: 100px;
   background: #2F1900;
   border-radius: 4px;
-  padding: 2px 20px 20px 20px;
+  padding: 10px;
+  margin-top: 60px;
+  display: block;
 }
 
 .survey_name h2 {
   color: white;
-  margin-bottom: 5px;
-  padding: 2px 20px 20px 20px;
 }
 
 .survey_name h4 {
   color: white;
   margin-top:5px;
-  padding: 2px 20px 20px 20px;
 }
 
 .survey_content {
+  margin-top: 10px;
   color: white;
-  margin-top: 50px;
+  width: 100%;
   background: #2F1900;
   border-radius: 4px;
   padding: 2px 20px 20px 20px;
@@ -174,6 +177,7 @@ th {
   background: #2F1900;
   border-radius: 4px;
   padding: 10px;
+  width: 100%;
 }
 
 .deets {
@@ -300,6 +304,29 @@ th {
 }
 
 .login form input:last-child {
+  background-color: #977044;
+  color: white;
+}
+
+.surveylist {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -100px;
+}
+
+.survey input {
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.button {
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
   background-color: #977044;
   color: white;
 }
