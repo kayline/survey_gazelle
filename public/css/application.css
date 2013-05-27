@@ -27,7 +27,7 @@ ul {
 }
 
 .container {
-  margin: 50px auto;
+  margin: auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
 }
@@ -284,6 +284,22 @@ th {
   z-index: -2;
 }
 
-.login {
-  margin-top: 150px;
+.login form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -75px;
+}
+
+.login form input {
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.login form input:last-child {
+  background-color: #977044;
+  color: white;
 }
