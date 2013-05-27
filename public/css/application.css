@@ -9,8 +9,6 @@ html {
   height: 100%;
   min-width: 100%;
   width: 100%;
-  /*background-image:url('fur3.jpeg');*/
-  /*background-repeat: no-repeat;*/
   background-color: #DBDBDC;
 }
 
@@ -18,17 +16,6 @@ html {
   margin: 50px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-}
-
-#title {
-  font-weight: bold;
-  position: absolute;
-  font-size: 80px;
-  text-align: vertical;
-  padding-left: 22px;
-  color: #504060;
-  text-shadow: -2px 0 white, 0 2px white,
-      2px 0 white, 0 -2px white;
 }
 
 .question-box {
@@ -48,6 +35,7 @@ th {
   left: 0;
   right: 0;
   background-color:#504060 ;
+  z-index: 100;
 
 }
 
@@ -78,6 +66,7 @@ th {
   padding-bottom: 0px;
   clear:both;
   color:red;
+  position: fixed;
 }
 
 .profile_surveys {
@@ -87,7 +76,6 @@ th {
   padding: 0 10px 10px 10px;
   margin-right: 15px;
   margin-top: 20px;
-
 }
 
 .profile_surveys ul {
@@ -177,10 +165,6 @@ th {
 }
 
 /* ################### Slideshow ###################### */
-
-.slideshow {
-}
-
 .grass{
     position: absolute;
     z-index: -1;
@@ -191,7 +175,7 @@ th {
     background-size: 250px 150px;
     height: 100%;
     width: 300%;
-    opacity: 0.40;
+    opacity: .5;
     -webkit-animation: slideshow 5s linear infinite;
     -moz-animation:    slideshow 5s linear infinite;
 }
@@ -232,10 +216,38 @@ th {
   height: 100%;
   min-width: 100%;
   width: 100%;
+  vertical-align: bottom;
+  display: inline-block;
   overflow: hidden;
   position: relative;
+  z-index: 0;
 }
 
 .inneroverflow {
-  z-index: 0;
+  min-height: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#gazelle {
+  margin: 0 auto;
+  display: block;
+  top: 50%;
+  margin-top: -226px;
+  left: 50%;
+  margin-left: -300px;
+  position: absolute;
+}
+
+#title {
+  font-weight: bold;
+  position: absolute;
+  font-size: 80px;
+  color: #504060;
+  text-shadow: -2px 0 white, 0 2px white,
+      2px 0 white, 0 -2px white;
+  top: 50%;
+  left: 50%;
+  margin-left: -280px;
+  margin-top: 226px;
 }

@@ -14,7 +14,7 @@
           <li><a href="/survey/<%=survey.id%>/results">View Results</a></li>
         </ul>
         </li>
-      <% end %>
+      <% end unless @created_surveys.nil? %>
     </ul>
   </div>
 
@@ -28,7 +28,7 @@
           <li><a href="/survey/<%=survey.id%>/results">View Results</a></li>
         </ul>
         </li>
-      <% end %>
+      <% end unless @voted_surveys.nil? %>
     </ul>
   </div>
 
