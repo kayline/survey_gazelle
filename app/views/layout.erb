@@ -19,6 +19,14 @@
 </head>
 <body>
   <%= erb :_nav %>
+  <div class="errors">
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p>Error: <%= error %></p>
+    <% end %>
+  <% end %>
+</div>
   <%= yield %>
+  <div></div>
 </body>
 </html>

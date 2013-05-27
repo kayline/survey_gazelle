@@ -21,8 +21,8 @@ helpers do
 
  def choice_count(survey_id)
   results= {}
-  @question = Survey.find(survey_id).questions[0]
-  @question.choices.each do |choice|
+  question = Survey.find(survey_id).questions[0]
+  question.choices.each do |choice|
     choice_sym = choice.choice.to_sym
     results[choice_sym] = choice.answers.count
   end
@@ -31,8 +31,8 @@ helpers do
 
   def choice_count_mult(survey_id)
     results= {}
-    @questions = Survey.find(survey_id).questions
-    @questions.each do |question|
+    questions = Survey.find(survey_id).questions
+    questions.each do |question|
       question_sym = question.question.to_sym
       choice_array = []
       question.choices.each do |choice|
@@ -45,9 +45,18 @@ helpers do
   end
 
    def get_voted_surveys(user_id)
-    @user = User.find(user_id)
-    survey_objs = @user.questions.map {|question| question.survey }.uniq
+    user = User.find(user_id)
+    survey_objs = user.questions.map {|question| question.survey }.uniq
+   end
 
+   def voted?(user_id, survey_id)
+    completed_surveys = get_voted_surveys(user_id)
+    comp_survey_ids = completed_surveys.map {|survey| survey.id}
+    if comp_survey_ids.include?(survey_id)
+      true
+    else
+      false
+    end
    end
 
 end

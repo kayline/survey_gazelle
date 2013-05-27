@@ -8,8 +8,15 @@ end
 
 post '/login' do
   p @user = User.find_by_username(params[:username])
-  session[:id] = @user.id
-  erb :profile
+  p @user.password_hash
+  p params[:password]
+  if @user && @user.password_hash == params[:password]
+    session[:id] = @user.id
+    redirect "/user/#{@user.id}/profile"
+  else
+    @errors = ["Username and/or password incorrect, please try again"]
+    erb :login
+  end
 end
 
 get '/user/create' do
@@ -29,15 +36,23 @@ get '/logout' do
 end
 
 get "/user/:user_id/profile" do
-  bounce(session[:id])
-  @created_surveys = current_user.surveys
-  @voted_surveys = get_voted_surveys(session[:id])
-  erb :profile
+  if session[:id] == nil
+      @errors = ["Please login to visit your profile"]
+      erb :surveys
+  else
+    @created_surveys = current_user.surveys
+    @voted_surveys = get_voted_surveys(session[:id])
+    erb :profile
+  end
 end
 
 get "/user/:user_id/survey/create" do
-  bounce(session[:id])
-  erb :create_survey
+  if session[:id] == nil
+      @errors = ["Please login to create a survey"]
+      erb :surveys
+  else
+    erb :create_survey
+  end
 end
 
 post '/user/:user_id/survey/create' do

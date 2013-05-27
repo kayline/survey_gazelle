@@ -72,6 +72,14 @@ th {
   padding-right: 40px;
 }
 
+.errors {
+  margin-top: 70px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  clear:both;
+  color:red;
+}
+
 .profile_surveys {
   float:left;
   background: #8D8B5F;
