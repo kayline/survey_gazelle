@@ -36,7 +36,6 @@ ul {
   margin: 50px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
 }
 
 th {
@@ -170,6 +169,7 @@ th {
 }
 
 .results_table {
+  color: white;
   margin-top: 20px;
   background: #2F1900;
   border-radius: 4px;
